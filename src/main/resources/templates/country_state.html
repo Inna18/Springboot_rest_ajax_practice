@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="card m-3">
+        <div class="card-body">
+            <ul class="nav nav-tabs" id="tabButton" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="general" data-bs-toggle="tab" data-bs-target="#general-tab-pane" type="button" role="tab" aria-controls="general-tab-pane" aria-selected="true">General</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="countries" data-bs-toggle="tab" data-bs-target="#countries-tab-pane" type="button" role="tab" aria-controls="countries-tab-pane" aria-selected="false">Countries</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="states" data-bs-toggle="tab" data-bs-target="#states-tab-pane" type="button" role="tab" aria-controls="states-tab-pane" aria-selected="false">States</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="tabContent">
+                <div class="tab-pane fade p-2" id="general-tab-pane" role="tabpanel" aria-labelledby="general" tabindex="0">
+                    <h3>General Information</h3>
+                </div>
+
+                <div class="tab-pane fade show active p-2" id="countries-tab-pane" role="tabpanel" aria-labelledby="countries" tabindex="0">
+                    <div>
+                        <div class="mb-3">
+                            <input type="button" value="Reload Country List" id="countryListButton" class="btn btn-primary">
+                        </div>
+                        <div class="mb-3">
+                            <select id="dropDownCountries" class="form-control" style="height: 300px" size="3">
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="countryName" class="col-form-label" id="countryNameLabel">Country Name: </label>
+                            </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" id="countryName" required>
+                            </div>
+                            <div class="col-md-3 justify-content-end">
+                                <input type="button" value="Add" id="addButton" class="btn btn-secondary">
+                                <input type="button" value="Update" id="updateButton" class="btn btn-secondary">
+                                <input type="button" value="Delete" id="deleteButton" class="btn btn-secondary">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade p-2" id="states-tab-pane" role="tabpanel" aria-labelledby="states" tabindex="0">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/countries.js}"></script>
+</body>
+</html>
